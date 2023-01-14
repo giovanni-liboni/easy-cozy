@@ -15,7 +15,7 @@ FROM ubuntu:22.10
 
 RUN apt-get update && apt-get upgrade -y && apt-get -y install git imagemagick ca-cacert libatomic1 \
   && rm -rf /var/cache/apt
-RUN groupadd --gid 1000 cozy && useradd --gid 1000 --uid 1000 -m -d /usr/local/cozy-stack cozy \
+RUN groupadd cozy && useradd -m -d /usr/local/cozy-stack cozy \
   && mkdir /etc/cozy && chown cozy:cozy /etc/cozy \
   && mkdir /usr/local/cozy-stack/scripts
 
